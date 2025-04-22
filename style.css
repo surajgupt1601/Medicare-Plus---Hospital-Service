@@ -1,0 +1,120 @@
+
+:root {
+    --primary: #1e40af;
+    --secondary: #60a5fa;
+    --accent: #3b82f6;
+    --light: #f0f9ff;
+    --dark: #1e3a8a;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.hero-section {
+    background-image: url('/images/Hero_section.webp');
+    background-size: cover;
+    background-position: center;
+}
+.telemedicine-image {
+    max-width: 768px;
+    max-height: 384px;
+    width: 100%;
+    height: auto;
+}
+
+
+@media (min-width: 1200px) {
+    .sticky-nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        transition: all 0.3s ease;
+    }
+}
+
+
+.logo {
+    width: 120px; 
+    max-height: 50px;
+    object-fit: contain;
+    background: none;
+    padding: 0; 
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 60px;
+        max-height: 30px;
+    }
+}
+
+
+.desktop-menu {
+    display: block;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+
+#mobile-dropdown {
+    display: none; 
+}
+
+
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+    .mobile-menu {
+        display: block; 
+    }
+    #mobile-dropdown {
+        display: none; 
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+#mobile-dropdown:not(.hidden) {
+    display: block; 
+}
+
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.specialty-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+/* scroll smoth */
+html {
+    scroll-behavior: smooth;
+}
+
+#symptom-checker textarea {
+    resize: vertical;
+}
+
+
+
+  
+

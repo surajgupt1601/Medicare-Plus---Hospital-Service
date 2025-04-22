@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Plus - Hospital Services</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./images/Logo.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-blue-50">
+    <main>
+        <!-- Navbar -->
+        <nav id="navbar" class="bg-white shadow-md sticky-nav">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex justify-between items-center">
+                    <!-- Logo -->
+                    <a href="#" class="flex items-center">
+                        <img src="./images/Logo.png" alt="MediCare Plus Logo" loading="lazy" class="logo">
+                    </a>
+                    
+                    <!-- Desktop Menu -->
+                    <div class="desktop-menu">
+                        <ul class="flex space-x-8 text-gray-700">
+                            <li><a href="#home" class="font-medium hover:text-blue-700 px-3 py-2 rounded-md transition">Home</a></li>
+                            <li><a href="#about" class="font-medium hover:text-blue-700 px-3 py-2 rounded-md transition">About</a></li>
+                            <li><a href="#services" class="font-medium hover:text-blue-700 px-3 py-2 rounded-md transition">Specialty Care</a></li>
+                            <li><a href="#outreach" class="font-medium hover:text-blue-700 px-3 py-2 rounded-md transition">Outreach Camps</a></li>
+                            <li><a href="#telemedicine" class="font-medium hover:text-blue-700 px-3 py-2 rounded-md transition">Telemedicine</a></li>
+                            <li><a href="#contact" class="font-medium hover:text-blue-700 px-3 py-2 rounded-md transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <div class="mobile-menu">
+                        <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                
+                <!-- Mobile Menu Dropdown -->
+                <div id="mobile-dropdown" class="hidden mt-4 pb-2 bg-white shadow-md">
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="block px-3 py-2 rounded-md hover:bg-blue-100 transition text-gray-700">Home</a></li>
+                        <li><a href="#about" class="block px-3 py-2 rounded-md hover:bg-blue-100 transition text-gray-700">About</a></li>
+                        <li><a href="#services" class="block px-3 py-2 rounded-md hover:bg-blue-100 transition text-gray-700">Specialty Care</a></li>
+                        <li><a href="#outreach" class="block px-3 py-2 rounded-md hover:bg-blue-100 transition text-gray-700">Outreach Camps</a></li>
+                        <li><a href="#telemedicine" class="block px-3 py-2 rounded-md hover:bg-blue-100 transition text-gray-700">Telemedicine</a></li>
+                        <li><a href="#contact" class="block px-3 py-2 rounded-md hover:bg-blue-100 transition text-gray-700">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section py-20 md:py-32 h-screen">
+            <div class="container mx-auto px-4 text-center">
+                <div class="bg-white bg-opacity-90 max-w-3xl mx-auto p-8 rounded-lg shadow-lg">
+                    <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-4">Quality Healthcare for Everyone</h1>
+                    <p class="text-xl text-gray-700 mb-8">Providing exceptional medical care with compassion and expertise.</p>
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
+                        <a href="#services" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition shadow-md">Our Services</a>
+                        <!-- <a href="#appointment" class="bg-white hover:bg-gray-100 text-blue-700 border border-blue-700 font-bold py-3 px-6 rounded-lg transition shadow-md">Book Appointment</a> -->
+                        <!-- <a href="#" id="book-appointment-btn" class="bg-white hover:bg-gray-100 text-blue-700 border border-blue-700 font-bold py-3 px-6 rounded-lg transition shadow-md">Book Appointment</a> -->
+                        <button id="book-appointment-btn" class="bg-white hover:bg-gray-100 text-blue-700 border border-blue-700 font-bold py-3 px-6 rounded-lg transition shadow-md">
+                            Book Appointment
+                          </button>
+                          
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="health-tips" class="py-16 bg-white">
+            <div class="container mx-auto px-4 text-center">
+              <h2 class="text-3xl font-bold text-blue-900 mb-6">Daily Health Tips</h2>
+              <div class="overflow-hidden relative w-full max-w-3xl mx-auto">
+                <div id="tip-carousel" class="transition-all duration-700 text-lg text-gray-700 min-h-[60px]">
+                  <!-- Tip will show here -->
+                </div>
+              </div>
+            </div>
+          </section>          
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">About MediCare Plus</h2>
+                    <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+                        Committed to excellence in healthcare for over 25 years, providing quality medical services to our community.
+                    </p>
+                </div>
+        
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-blue-800 mb-4">Our Mission</h3>
+                        <p class="text-gray-700 mb-6">
+                            To provide compassionate, accessible, and high-quality healthcare services that improve the health and well-being of individuals and communities we serve.
+                        </p>
+        
+                        <h3 class="text-2xl font-semibold text-blue-800 mb-4">Our Vision</h3>
+                        <p class="text-gray-700 mb-6">
+                            To be the leading healthcare provider known for excellence in patient care, innovative treatments, and community wellness.
+                        </p>
+        
+                        <div class="grid grid-cols-2 gap-4 mt-8">
+                            <div class="bg-blue-50 p-4 rounded-lg text-center">
+                                <div class="text-blue-700 font-bold text-3xl mb-2">25+</div>
+                                <div class="text-gray-600">Years of Service</div>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg text-center">
+                                <div class="text-blue-700 font-bold text-3xl mb-2">100+</div>
+                                <div class="text-gray-600">Expert Doctors</div>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg text-center">
+                                <div class="text-blue-700 font-bold text-3xl mb-2">50K+</div>
+                                <div class="text-gray-600">Patients Treated</div>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg text-center">
+                                <div class="text-blue-700 font-bold text-3xl mb-2">15+</div>
+                                <div class="text-gray-600">Specialties</div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Responsive Image with Lazy Loading -->
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        <picture>
+                            <source srcset="./images/About_section.webp" media="(min-width: 1024px)">
+                            <source srcset="./images/Pediatrics.png" media="(min-width: 768px)">
+                            <img src="./images/cardiology.png" alt="Hospital Building" class="w-full h-auto" loading="lazy">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Specialty Care Services -->
+        <section id="services" class="py-16 bg-blue-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Specialty Care Services</h2>
+                    <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-4xl mx-auto">Comprehensive healthcare services delivered by experienced specialists using state-of-the-art technology.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-blue-800 mb-2 text-center">Cardiology</h3>
+                            <p class="text-gray-600 text-center">Comprehensive diagnosis and treatment of heart conditions by expert cardiologists.</p>
+                            <div class="mt-4 text-center">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Learn More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 2 -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-blue-800 mb-2 text-center">Neurology</h3>
+                            <p class="text-gray-600 text-center">Expert care for disorders of the nervous system, brain, and spinal cord.</p>
+                            <div class="mt-4 text-center">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Learn More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 3 -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-blue-800 mb-2 text-center">Orthopedics</h3>
+                            <p class="text-gray-600 text-center">Specialized treatment for issues related to bones, joints, and muscles.</p>
+                            <div class="mt-4 text-center">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Learn More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 4 -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-blue-800 mb-2 text-center">Pediatrics</h3>
+                            <p class="text-gray-600 text-center">Complete healthcare for infants, children, and adolescents.</p>
+                            <div class="mt-4 text-center">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Learn More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 5 -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-blue-800 mb-2 text-center">Ophthalmology</h3>
+                            <p class="text-gray-600 text-center">Comprehensive eye care services from routine check-ups to complex surgeries.</p>
+                            <div class="mt-4 text-center">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Learn More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 6 -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-blue-800 mb-2 text-center">Dermatology</h3>
+                            <p class="text-gray-600 text-center">Expert care for skin, hair, and nail conditions by specialized dermatologists.</p>
+                            <div class="mt-4 text-center">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Learn More →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-10">
+                    <a href="#" class="inline-block bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition shadow-md">View All Services</a>
+                </div>
+            </div>
+        </section>
+        <!-- Doctor availability -->
+        <!-- Doctor Availability Section -->
+        <section id="availability" class="py-16 bg-blue-50">
+            <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-blue-900 mb-6">Doctor Availability</h2>
+            
+            <div id="doctor-list-wrapper">
+                <div id="doctor-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Doctors will be injected here via JS -->
+                </div>
+        
+                <div class="mt-6">
+                <button id="toggle-doctors" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-6 rounded-lg transition">
+                    Show More
+                </button>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Outreach Camps Section -->
+        <section id="outreach" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Outreach Healthcare Camps</h2>
+                    <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-4xl mx-auto">Bringing quality healthcare services to underserved communities through our mobile medical camps.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        <img src="./images/Outreach_section.webp" alt="Medical Camp" loading="lazy" class="w-full h-auto">
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-semibold text-blue-800 mb-4">Our Community Initiative</h3>
+                        <p class="text-gray-700 mb-6">Our outreach camps are designed to provide essential healthcare services to remote and underserved areas, ensuring that quality medical care reaches those who need it most.</p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Free medical consultations with specialists</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Basic diagnostic tests and screenings</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Health education and awareness programs</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Free medicine distribution for essential treatments</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-xl font-semibold text-blue-800 mb-4">Upcoming Camps</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h5 class="font-semibold text-blue-800">Rural Health Camp</h5>
+                                        <p class="text-gray-600">Westville Community Center</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-blue-800 font-medium">March 15, 2025</div>
+                                        <div class="text-gray-600">9:00 AM - 4:00 PM</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h5 class="font-semibold text-blue-800">Senior Citizens Health Camp</h5>
+                                        <p class="text-gray-600">Oakwood Senior Center</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-blue-800 font-medium">April 5, 2025</div>
+                                        <div class="text-gray-600">10:00 AM - 3:00 PM</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Telemedicine Section -->
+        <section id="telemedicine" class="py-16 bg-blue-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Telemedicine Services</h2>
+                    <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-4xl mx-auto">Connect with our specialists from the comfort of your home through secure video consultations.</p>
+                </div>
+                
+                <!-- Image with Size Constraints -->
+                <div class="mb-8 flex justify-center">
+                    <img src="./images/Telemedicine_section.webp" alt="Telemedicine Consultation" class="telemedicine-image rounded-lg shadow-md object-cover" loading="lazy">
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- How It Works -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-2xl font-semibold text-blue-800 mb-4">How It Works</h3>
+                        <ol class="space-y-4">
+                            <li class="flex">
+                                <div class="flex-shrink-0 bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center text-blue-700 font-bold mr-3">1</div>
+                                <div>
+                                    <p class="text-gray-700"><span class="font-medium">Book an appointment</span> through our online portal or mobile app</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <div class="flex-shrink-0 bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center text-blue-700 font-bold mr-3">2</div>
+                                <div>
+                                    <p class="text-gray-700"><span class="font-medium">Receive a confirmation</span> with your appointment details and link</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <div class="flex-shrink-0 bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center text-blue-700 font-bold mr-3">3</div>
+                                <div>
+                                    <p class="text-gray-700"><span class="font-medium">Join the secure video call</span> at your scheduled time</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <!-- Benefits of Telemedicine -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-2xl font-semibold text-blue-800 mb-4">Benefits of Telemedicine</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Convenience: Access healthcare from the comfort of your home.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Time-saving: No travel required, reducing waiting times.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Accessibility: Ideal for those with mobility issues or in remote areas.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Safety: Minimizes exposure to illnesses in waiting rooms.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Available Specialties -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-2xl font-semibold text-blue-800 mb-4">Available Specialties</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">General Medicine</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Dermatology</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Psychiatry</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Pediatrics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Telemedicine Appointment -->
+                <div class="flex justify-center mt-6">
+                    <button onclick="toggleVideoBooking()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-md">
+                      Book Video Consultation
+                    </button>
+                </div>
+                  
+            </div>
+        </section>
+        <!-- Symptom checker -->
+        <section id="symptom-checker" class="py-16 bg-white">
+            <div class="container mx-auto px-4 text-center">
+              <h2 class="text-3xl font-bold text-blue-900 mb-6">AI Symptom Checker</h2>
+              <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">Describe your symptoms, and our AI will suggest possible conditions and advice.</p>
+              <form id="symptomForm" class="max-w-xl mx-auto space-y-4">
+                <textarea id="symptomInput" rows="4" placeholder="e.g., I have a fever and sore throat..." class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition shadow-md">Check Symptoms</button>
+              </form>
+            </div>              
+        </section>
+          
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Contact Us</h2>
+                    <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-4xl mx-auto">We’re here to assist you. Reach out to us for any inquiries or to schedule an appointment.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-blue-800 mb-4">Get in Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <svg class="h-6 w-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                                <p class="text-gray-700">+91 7322074217</p>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="h-6 w-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <p class="text-gray-700">support@medicareplus.com</p>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="h-6 w-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <p class="text-gray-700">Phagwara, Punjab</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-semibold text-blue-800 mb-4">Send Us a Message</h3>
+                        <form class="space-y-4" id="contactForm">
+                            <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <textarea placeholder="Your Message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition shadow-md">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-blue-900 text-white py-8">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-blue-200 hover:text-white transition">Home</a></li>
+                            <li><a href="#about" class="text-blue-200 hover:text-white transition">About</a></li>
+                            <li><a href="#services" class="text-blue-200 hover:text-white transition">Specialty Care</a></li>
+                            <li><a href="#telemedicine" class="text-blue-200 hover:text-white transition">Telemedicine</a></li>
+                            <li><a href="#contact" class="text-blue-200 hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-200 hover:text-white transition">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+                            </a>
+                            <a href="#" class="text-blue-200 hover:text-white transition">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg>
+                            </a>
+                            <a href="#" class="text-blue-200 hover:text-white transition">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 text-center text-blue-200">
+                    <p>&copy; 2023 MediCare Plus. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>    
+    <!-- model for appointment booking -->
+    <div id="appointment-modal" class="hidden fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-white/30 z-1000">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-lg relative">
+          <button onclick="toggleAppointmentForm()" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-3xl">&times;</button>
+          <h2 class="text-2xl font-bold mb-6 text-blue-800 text-center">Book an Appointment</h2>
+          <form id="appointmentForm" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+              <input type="text" id="a-name" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+              <input type="email" id="a-email" placeholder="you@example.com" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+              <input type="tel" id="a-phone" placeholder="123-456-7890"  class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Appointment Date *</label>
+              <input type="date" id="a-date" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Department *</label>
+              <select id="a-department" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">Select a Department</option>
+                <option>Cardiology</option>
+                <option>Neurology</option>
+                <option>Orthopedics</option>
+                <option>Dermatology</option>
+                <option>Pediatrics</option>
+                <option>Ophthalmology</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Your Concern *</label>
+              <textarea id="a-message" rows="3" placeholder="Write here..." class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition shadow-md">Submit Appointment</button>
+          </form>
+        </div>
+    </div>
+      
+    <!-- Emergency Floating Button -->
+    <button onclick="toggleEmergencyModal()" class="fixed bottom-6 right-6 bg-red-600 text-white p-4 rounded-full shadow-lg hover:bg-red-700 transition z-50">
+        🚑 Emergency
+    </button>
+  
+    <!-- Emergency Modal -->
+    <div id="emergency-modal" class="hidden fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-white/30 z-50">
+        <div class="bg-white rounded-lg p-6 shadow-lg w-full max-w-md relative">
+        <button onclick="toggleEmergencyModal()" class="absolute top-2 right-3 text-3xl text-semibold text-gray-600 hover:text-black">&times;</button>
+        <h2 class="text-2xl font-bold text-red-600 mb-4">Emergency Services</h2>
+        <p class="mb-3 text-gray-700">For immediate assistance, use the details below:</p>
+        <ul class="space-y-2 text-left text-gray-800">
+            <li><strong>🚑 Ambulance:</strong> <a href="tel:112" class="text-blue-600 hover:underline">112</a></li>
+            <li><strong>🏥 Nearest Hospital:</strong> <button onclick="findNearestHospital()" class="text-blue-600 hover:underline">Find Nearest Hospital</button></li>
+            <li><strong>📞 Emergency Helpline:</strong> <a href="tel:102" class="text-blue-600 hover:underline">102</a></li>
+        </ul>
+        </div>
+    </div>
+    
+  <!-- Telemedicine Video Consultation Modal -->
+    <div id="video-booking-modal" class="hidden fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-white/30 z-50">
+        <div class="bg-white/90 backdrop-blur-md border border-white/40 rounded-2xl p-6 shadow-xl w-full max-w-lg relative">
+        <button onclick="toggleVideoBooking()" class="absolute top-2 right-3 text-2xl text-gray-600 hover:text-black">&times;</button>
+        <h2 class="text-2xl font-bold mb-4 text-blue-800 text-center">Book a Video Consultation</h2>
+        <form id="videoForm" class="space-y-4">
+            <input type="text" id="v-name" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg" required>
+            <input type="email" id="v-email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg" required>
+            <input type="date" id="v-date" class="w-full p-3 border border-gray-300 rounded-lg" required>
+            <textarea id="v-issue" rows="3" placeholder="Briefly describe your issue..." class="w-full p-3 border border-gray-300 rounded-lg" required></textarea>
+            <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition">Submit</button>
+        </form>
+        <div id="video-confirmation" class="hidden mt-6 text-left text-gray-700 bg-blue-50 p-4 rounded-lg shadow-inner">
+            <h3 class="font-bold text-lg text-green-700 mb-2">✅ Appointment Confirmed!</h3>
+            <p><strong>Date:</strong> <span id="v-date-display"></span></p>
+            <p><strong>Join Link:</strong> <a href="https://meet.google.com/new" target="_blank" class="text-blue-600 underline">Click here to join video consultation</a></p>
+        </div>
+        </div>
+    </div>
+
+<!-- AI Diagnosis Modal -->
+<div id="ai-modal" class="hidden fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm z-100">
+    <div class="bg-white rounded-xl shadow-xl w-full max-w-lg max-h-[90vh] overflow-y-auto p-6 relative">
+      <button onclick="toggleDiagnosisModal()" class="absolute top-2 right-3 text-2xl text-gray-600 hover:text-black">&times;</button>
+      <h2 class="text-2xl font-bold mb-4 text-blue-800 text-center">🧠 AI Diagnosis</h2>
+      <div id="ai-modal-result" class="text-gray-700 whitespace-pre-line"></div>
+    </div>
+  </div>
+  
+  
+      
+    <!-- JavaScript -->
+    <script src="./main.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>
