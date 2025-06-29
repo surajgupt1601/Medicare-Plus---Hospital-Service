@@ -261,7 +261,8 @@ symptomForm.addEventListener("submit", async function (e) {
   toggleDiagnosisModal();
 
   try {
-    const res = await fetch("http://localhost:3000/symptom-check", {
+    // const res = await fetch("http://localhost:3000/symptom-check", {
+    const res = await fetch("https://your-render-app.onrender.com/symptom-check", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ symptoms })
